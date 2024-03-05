@@ -7,6 +7,7 @@ const Navigation = () => {
             <Link href="./week-3" className="hover:text-green-500  hover:underline">Week 3 Assignment</Link>
             <Link href="./week-4" className="hover:text-green-500  hover:underline">Week 4 Assignment</Link>
             <Link href="./week-5" className="hover:text-green-500  hover:underline">Week 5 Assignment</Link>
+            <Link href="./week-6" className="hover:text-green-500  hover:underline">Week 6 Assignment</Link>
         </div>
     )
 }
