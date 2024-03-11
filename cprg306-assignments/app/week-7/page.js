@@ -15,9 +15,7 @@ export default function Page() {
   };
 
   const handleItemSelect = (itemName) => {
-    // Check if itemName is a string
     if (typeof itemName === "string") {
-      // Clean up the item name by removing size, emoji, and additional unwanted information
       const cleanedItemName = itemName
         .replace(
           /,.*|[\u2700-\u27BF]|[\uE000-\uF8FF]|�[�-�]|�[�-�]|[\u2011-\u26FF]|�[�-�]|\p{Emoji}/gu,

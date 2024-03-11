@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 
-// Define API fetching function outside the component
 const fetchMealDetails = async (mealId) => {
   try {
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`);
@@ -16,7 +15,6 @@ const fetchMealDetails = async (mealId) => {
 
 const fetchMealIdeas = async (ingredient) => {
   try {
-    // Use template string to include the dynamic ingredient value
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`);
     const data = await response.json();
     return data.meals || [];
@@ -27,29 +25,24 @@ const fetchMealIdeas = async (ingredient) => {
 };
 
 const MealIdeas = ({ ingredient }) => {
-  // Define state variables for meal ideas and selected meal details
   const [meals, setMeals] = useState([]);
   const [selectedMeal, setSelectedMeal] = useState(null);
 
-  // Define load function for meal ideas
   const loadMealIdeas = async () => {
     const mealList = await fetchMealIdeas(ingredient);
     setMeals(mealList);
-    setSelectedMeal(null); // Reset selectedMeal when fetching new meal ideas
+    setSelectedMeal(null); 
   };
 
-  // Define load function for meal details
   const loadMealDetails = async (mealId) => {
     const mealDetails = await fetchMealDetails(mealId);
     setSelectedMeal(mealDetails);
   };
 
-  // Use the useEffect hook to call loadMealIdeas whenever the ingredient prop changes
   useEffect(() => {
     loadMealIdeas();
   }, [ingredient]);
 
-  // Render the component
   return (
     <div>
       {meals.length > 0 && (
