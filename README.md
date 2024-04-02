@@ -7,4 +7,6 @@ Winter 2024 - Web Development
 4. Week 5 Assignment ✅
 5. Week 6 Assignment ✅
 6. Week 7 Assignment ✅
+7. Week 8 Assignment ✅
+8. Week 10 Assignment ✅
 
